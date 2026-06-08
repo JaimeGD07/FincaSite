@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos</title>
+    <style>
+        /* Estilos Base y Centrado */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Contenedor Principal (Tarjeta) */
+        .card {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Título */
+        h1 {
+            color: #333333;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Contenedor y Estilo de la Imagen */
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+            background-color: #fafafa;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Elimina espacio en blanco inferior */
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Efecto opcional al pasar el mouse sobre la imagen */
+        .image-container img:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>¡Bienvenidos!</h1>
+
+        <div class="image-container">
+            <img src="tu-imagen.jpg" alt="Imagen de Bienvenida" id="welcome-image">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript opcional: Por si quieres hacer algo cuando la imagen cargue
+        const imagen = document.getElementById('welcome-image');
+        
+        imagen.addEventListener('load', () => {
+            console.log('La imagen de bienvenida se ha cargado correctamente.');
+        });
+
+        imagen.addEventListener('error', () => {
+            console.error('Error al cargar la imagen. Verifica que la ruta sea correcta.');
+        });
+    </script>
+
+</body>
+</html>

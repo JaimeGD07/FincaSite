@@ -1,91 +1,706 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenidos</title>
-    <style>
-        /* Estilos Base y Centrado */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Finca El Magueyal — Tradición cafetalera, calidad y tecnología desde el campo hasta la comercialización. Café de especialidad con trazabilidad y gestión ERP." />
+  <meta name="keywords" content="café, finca cafetalera, café de especialidad, El Salvador, ERP, Odoo, trazabilidad, café premium" />
+  <meta property="og:title" content="Finca El Magueyal — Tradición y Tecnología Cafetalera" />
+  <meta property="og:description" content="Café de especialidad con tradición, calidad y modernización tecnológica." />
+  <meta property="og:image" content="assets/images/bosque.png" />
+  <meta name="theme-color" content="#2C1810" />
+  <title>Finca El Magueyal | Café de Especialidad</title>
 
-        /* Contenedor Principal (Tarjeta) */
-        .card {
-            background-color: #ffffff;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 500px;
-            width: 90%;
-            transition: transform 0.3s ease;
-        }
+  <!-- Fuentes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet" />
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+  <link rel="stylesheet" href="style.css" />
 
-        /* Título */
-        h1 {
-            color: #333333;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        /* Contenedor y Estilo de la Imagen */
-        .image-container {
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #e0e0e0;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
-            background-color: #fafafa;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            display: block; /* Elimina espacio en blanco inferior */
-            object-fit: cover;
-            transition: opacity 0.3s ease;
-        }
-
-        /* Efecto opcional al pasar el mouse sobre la imagen */
-        .image-container img:hover {
-            opacity: 0.9;
-        }
-    </style>
+  <!-- Favicon (emoji fallback) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>" />
 </head>
 <body>
 
-    <div class="card">
-        <h1>¡Bienvenidos!</h1>
-
-        <div class="image-container">
-            <img src="icon.jpg" alt="Imagen de Bienvenida" id="welcome-image">
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container">
+      <a href="#inicio" class="nav-brand" aria-label="Finca El Magueyal — Inicio">
+        <img src="assets/images/logo.jpeg" alt="Logo Finca El Magueyal" class="nav-logo" width="52" height="52" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Finca El Magueyal</span>
+          <span class="nav-brand-tagline">Café de Especialidad</span>
         </div>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#finca">La Finca</a></li>
+        <li><a href="#cafe">Nuestro Café</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#tecnologia">Tecnología</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <script>
-        // JavaScript opcional: Por si quieres hacer algo cuando la imagen cargue
-        const imagen = document.getElementById('welcome-image');
-        
-        imagen.addEventListener('load', () => {
-            console.log('La imagen de bienvenida se ha cargado correctamente.');
-        });
+  <!-- Mobile Overlay Menu -->
+  <nav class="nav-mobile" aria-label="Menú móvil">
+    <button class="close-btn" aria-label="Cerrar menú">✕</button>
+    <a href="#inicio">Inicio</a>
+    <a href="#finca">La Finca</a>
+    <a href="#cafe">Nuestro Café</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#tecnologia">Tecnología</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
-        imagen.addEventListener('error', () => {
-            console.error('Error al cargar la imagen. Verifica que la ruta sea correcta.');
-        });
-    </script>
+  <main>
 
+    <!-- ══════════════════════════════════════════
+         1. HERO
+    ══════════════════════════════════════════ -->
+    <section id="inicio" class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <img src="assets/images/logo.jpeg" alt="Sello Finca El Magueyal" class="hero-logo" width="110" height="110" />
+
+        <p class="hero-eyebrow">El Salvador · Café de Especialidad · Desde el campo</p>
+
+        <h1>
+          Finca<br />
+          <strong>El Magueyal</strong>
+        </h1>
+
+        <p class="hero-subtitle">
+          Tradición cafetalera, calidad y tecnología desde el campo hasta la comercialización
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#finca" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Conocer la Finca
+          </a>
+          <a href="#proceso" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Nuestro Proceso
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+        <span>Explorar</span>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         2. HISTORIA DE LA FINCA
+    ══════════════════════════════════════════ -->
+    <section id="finca" class="historia">
+      <div class="container">
+
+        <div class="historia-image-wrap reveal">
+          <img src="assets/images/bosque.png"
+               alt="Camino entre árboles de la Finca El Magueyal con rayos de luz dorada"
+               class="historia-img"
+               width="600" height="560"
+               loading="lazy" />
+          <div class="historia-badge">
+            <span class="badge-year">Est.</span>
+            <span class="badge-year">2024</span>
+            <span class="badge-text">Finca El Magueyal</span>
+          </div>
+        </div>
+
+        <div class="historia-text">
+          <p class="eyebrow reveal reveal-delay-1">Nuestra Historia</p>
+          <h2 class="reveal reveal-delay-2">
+            Raíces en la tierra,<br />
+            <em>visión en el futuro</em>
+          </h2>
+
+          <div class="historia-pullquote reveal reveal-delay-3">
+            <p>"Una finca que honra la tradición del café salvadoreño mientras abraza la innovación tecnológica para crecer con integridad."</p>
+          </div>
+
+          <p class="reveal reveal-delay-3">
+            Finca El Magueyal representa una organización cafetalera comprometida con modernizar sus procesos sin perder la esencia del trabajo agrícola. Ubicada en tierras fértiles, nuestra finca combina décadas de conocimiento del cultivo del café con una visión empresarial orientada al crecimiento sostenible.
+          </p>
+
+          <p class="reveal reveal-delay-4">
+            Creemos que la calidad del café comienza mucho antes de la taza. Nace en la selección de variedades, en el cuidado diario del cultivo, en el respeto por la tierra y en el trabajo dedicado de quienes hacen posible cada cosecha.
+          </p>
+
+          <div class="historia-stats reveal reveal-delay-5">
+            <div class="stat-item">
+              <span class="stat-number counter" data-target="15" data-suffix=" ha">0</span>
+              <span class="stat-label">Hectáreas cultivadas</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number counter" data-target="6" data-suffix="">0</span>
+              <span class="stat-label">Módulos ERP</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number counter" data-target="100" data-suffix="%">0</span>
+              <span class="stat-label">Trazabilidad</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         3. NUESTRO CAFÉ
+    ══════════════════════════════════════════ -->
+    <section id="cafe" class="nuestro-cafe">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="eyebrow reveal">Nuestros Productos</p>
+          <h2 class="reveal reveal-delay-1">Nuestro <em>Café</em></h2>
+          <p class="reveal reveal-delay-2">Cada etapa de transformación del café tiene su propia identidad, su propio carácter y su propia historia.</p>
+          <div class="divider-gold reveal reveal-delay-2"></div>
+        </div>
+
+        <div class="cafe-cards">
+
+          <!-- Café Uva -->
+          <article class="cafe-card reveal reveal-delay-1">
+            <div class="cafe-card-image">
+              <div class="cafe-card-ph ph-uva">
+                <span class="ph-icon-lg">🍒</span>
+                <span class="ph-mini">📷 Añadir foto de café uva/cereza</span>
+              </div>
+            </div>
+            <div class="cafe-card-body">
+              <p class="cafe-card-tag">Etapa 01</p>
+              <h3>Café Uva</h3>
+              <p>El fruto en su máxima expresión. Las cerezas de café seleccionadas en su punto ideal de maduración, con un rojo intenso que indica la perfección del grano en su interior.</p>
+            </div>
+          </article>
+
+          <!-- Café Verde -->
+          <article class="cafe-card reveal reveal-delay-2">
+            <div class="cafe-card-image">
+              <div class="cafe-card-ph ph-verde">
+                <span class="ph-icon-lg">🌿</span>
+                <span class="ph-mini">📷 Añadir foto de café verde/pergamino</span>
+              </div>
+            </div>
+            <div class="cafe-card-body">
+              <p class="cafe-card-tag">Etapa 02</p>
+              <h3>Café Verde</h3>
+              <p>El grano sin tostar, listo para su comercialización o tostado artesanal. Conserva todos los perfiles de sabor del origen, resultado de un proceso de beneficio cuidadoso.</p>
+            </div>
+          </article>
+
+          <!-- Café Oro -->
+          <article class="cafe-card reveal reveal-delay-3">
+            <div class="cafe-card-image">
+              <div class="cafe-card-ph ph-oro">
+                <span class="ph-icon-lg">✨</span>
+                <span class="ph-mini">📷 Añadir foto de café oro/tostado</span>
+              </div>
+            </div>
+            <div class="cafe-card-body">
+              <p class="cafe-card-tag">Etapa 03</p>
+              <h3>Café Oro</h3>
+              <p>El grano pelado y pulido, listo para el tostado final. Nuestra presentación estrella para exportación, con los más altos estándares de clasificación y calidad.</p>
+            </div>
+          </article>
+
+          <!-- Calidad y Trazabilidad -->
+          <article class="cafe-card reveal reveal-delay-4">
+            <div class="cafe-card-image">
+              <div class="cafe-card-ph ph-calidad">
+                <span class="ph-icon-lg">🎯</span>
+                <span class="ph-mini">📷 Añadir foto de control de calidad</span>
+              </div>
+            </div>
+            <div class="cafe-card-body">
+              <p class="cafe-card-tag">Compromiso</p>
+              <h3>Calidad y Trazabilidad</h3>
+              <p>Desde el registro de cada lote hasta la entrega final, cada kilogramo de café está documentado y trazado con nuestro sistema ERP para garantizar transparencia total.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         4. DEL CAMPO A LA TAZA — Timeline
+    ══════════════════════════════════════════ -->
+    <section id="proceso" class="proceso">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="eyebrow reveal">El Camino del Café</p>
+          <h2 class="reveal reveal-delay-1">Del Campo <em>a la Taza</em></h2>
+          <p class="reveal reveal-delay-2">Un proceso cuidadoso, documentado y trazable en cada etapa.</p>
+          <div class="divider-gold reveal reveal-delay-2"></div>
+        </div>
+
+        <div class="timeline" role="list">
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-step ts-1">
+              <span class="step-num">01</span>
+              <span class="step-icon">🌱</span>
+            </div>
+            <div>
+              <h4>Cultivo</h4>
+              <p>Selección de variedades, manejo del cafetal, fertilización y cuidado permanente del suelo para garantizar la mejor calidad en cada ciclo productivo.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-step ts-2">
+              <span class="step-num">02</span>
+              <span class="step-icon">🍒</span>
+            </div>
+            <div>
+              <h4>Cosecha</h4>
+              <p>Recolección selectiva de las cerezas en su punto óptimo de maduración. Corte manual que garantiza la selección del fruto perfecto.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-step ts-3">
+              <span class="step-num">03</span>
+              <span class="step-icon">🔬</span>
+            </div>
+            <div>
+              <h4>Control de Calidad</h4>
+              <p>Análisis sensorial, clasificación por densidad y tamaño, y registro en el sistema ERP para asegurar estándares consistentes lote a lote.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-step ts-4">
+              <span class="step-num">04</span>
+              <span class="step-icon">⚙️</span>
+            </div>
+            <div>
+              <h4>Beneficio</h4>
+              <p>Despulpado, fermentación, lavado y secado del café bajo protocolos rigurosos que preservan el perfil de taza y las características del origen.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-step ts-5">
+              <span class="step-num">05</span>
+              <span class="step-icon">☕</span>
+            </div>
+            <div>
+              <h4>Comercialización</h4>
+              <p>Empaque, documentación de exportación y entrega al cliente final con trazabilidad completa desde el lote de origen hasta el destino final.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         5. INNOVACIÓN TECNOLÓGICA
+    ══════════════════════════════════════════ -->
+    <section id="tecnologia" class="innovacion">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <p class="eyebrow">Sistema ERP · Odoo</p>
+          <h2 style="color:var(--crema)">Transformando la gestión<br /><em>cafetalera con tecnología</em></h2>
+          <div class="divider-gold"></div>
+        </div>
+
+        <p class="innovacion-intro reveal reveal-delay-1">
+          El sistema busca centralizar la información operativa, financiera y logística de la finca para mejorar la trazabilidad desde el trabajo de campo hasta la venta del café. Una plataforma única para toda la operación.
+        </p>
+
+        <div class="modulos-grid">
+
+          <!-- RRHH -->
+          <div class="modulo-card">
+            <div class="modulo-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3>Recursos Humanos</h3>
+            <p>Gestión de personal, jornales agrícolas, control de asistencia, planillas y documentación de trabajadores del campo y la administración.</p>
+          </div>
+
+          <!-- Inventario -->
+          <div class="modulo-card">
+            <div class="modulo-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Inventario</h3>
+            <p>Control de lotes de café en todas sus etapas, insumos agrícolas, maquinaria y activos de la finca con trazabilidad completa por movimiento.</p>
+          </div>
+
+          <!-- Mantenimiento -->
+          <div class="modulo-card">
+            <div class="modulo-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Mantenimiento</h3>
+            <p>Planificación de mantenimiento preventivo de maquinaria del beneficio, equipos agrícolas y vehículos, con historial de intervenciones y costos.</p>
+          </div>
+
+          <!-- Compras -->
+          <div class="modulo-card">
+            <div class="modulo-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            </div>
+            <h3>Compras</h3>
+            <p>Gestión de proveedores, órdenes de compra, recepción de insumos agrícolas y productos del beneficio, con control de presupuesto y aprobaciones.</p>
+          </div>
+
+          <!-- Ventas -->
+          <div class="modulo-card">
+            <div class="modulo-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+            <h3>Ventas</h3>
+            <p>Registro de clientes, cotizaciones, órdenes de venta y seguimiento de contratos de exportación con trazabilidad directa al lote de origen.</p>
+          </div>
+
+          <!-- Facturación -->
+          <div class="modulo-card">
+            <div class="modulo-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3>Facturación</h3>
+            <p>Control financiero integral, emisión de facturas, gestión de cobros y pagos, reportes contables y cumplimiento tributario con registros auditables.</p>
+          </div>
+
+        </div>
+
+        <div class="innovacion-footer reveal">
+          <p>
+            La implementación de Odoo Community en Finca El Magueyal busca digitalizar las operaciones agrícolas y administrativas, conectando el trabajo del campo con la gestión empresarial en una sola plataforma integrada.
+          </p>
+          <a href="#contacto" class="btn btn-primary">Saber más sobre el proyecto</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         6. BENEFICIOS DEL SISTEMA
+    ══════════════════════════════════════════ -->
+    <section class="beneficios">
+      <div class="container">
+        <div class="beneficios-grid">
+
+          <div class="beneficios-left">
+            <p class="eyebrow reveal">Impacto Operativo</p>
+            <h2 class="reveal reveal-delay-1">¿Por qué <em>digitalizar</em> la finca?</h2>
+            <p class="reveal reveal-delay-2">
+              La tecnología no reemplaza el trabajo del campo — lo potencia. Con un sistema integrado, cada decisión está respaldada por datos reales, actualizados y confiables.
+            </p>
+            <div class="beneficios-visual reveal reveal-delay-3">
+              <div class="bv-bg">
+                <div class="bv-circle">
+                  <div class="bv-circle-inner">
+                    Del grano a<br />los datos
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="beneficios-right">
+
+            <div class="beneficio-item reveal reveal-delay-1">
+              <div class="beneficio-check">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="beneficio-text">
+                <h4>Mayor control operativo</h4>
+                <p>Visibilidad en tiempo real de todas las áreas de la finca: campo, beneficio, almacén y administración, desde un único sistema.</p>
+              </div>
+            </div>
+
+            <div class="beneficio-item reveal reveal-delay-2">
+              <div class="beneficio-check">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="beneficio-text">
+                <h4>Mejor trazabilidad</h4>
+                <p>Seguimiento completo del café desde el lote de cosecha hasta la factura de venta, garantizando transparencia total para clientes y compradores.</p>
+              </div>
+            </div>
+
+            <div class="beneficio-item reveal reveal-delay-3">
+              <div class="beneficio-check">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="beneficio-text">
+                <h4>Gestión de recursos</h4>
+                <p>Optimización del uso de insumos, mano de obra y maquinaria mediante datos históricos y proyecciones basadas en rendimientos reales.</p>
+              </div>
+            </div>
+
+            <div class="beneficio-item reveal reveal-delay-4">
+              <div class="beneficio-check">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="beneficio-text">
+                <h4>Control financiero</h4>
+                <p>Costos por lote, análisis de rentabilidad, control presupuestal y reportes financieros actualizados para la toma de decisiones estratégicas.</p>
+              </div>
+            </div>
+
+            <div class="beneficio-item reveal reveal-delay-5">
+              <div class="beneficio-check">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="beneficio-text">
+                <h4>Optimización de procesos</h4>
+                <p>Eliminación de tareas manuales redundantes, reducción de errores y automatización de flujos de trabajo en toda la operación cafetalera.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         7. PROYECTO TECNOLÓGICO — Odoo
+    ══════════════════════════════════════════ -->
+    <section class="proyecto">
+      <div class="container">
+
+        <div class="proyecto-text">
+          <p class="eyebrow reveal" style="color:var(--dorado-suave)">Proyecto Tecnológico</p>
+          <h2 class="reveal reveal-delay-1">Digitalización agrícola<br /><em>con Odoo Community</em></h2>
+          <p class="reveal reveal-delay-2">
+            La solución tecnológica de Finca El Magueyal está basada en <strong style="color:var(--dorado-suave)">Odoo Community</strong>, una plataforma ERP de código abierto adaptada a las necesidades específicas de la producción cafetalera.
+          </p>
+          <p class="reveal reveal-delay-3">
+            La implementación cubre desde el registro de actividades de campo, control de jornales y manejo de inventarios, hasta la gestión de ventas, facturación y análisis financiero, todo conectado en un ecosistema digital centralizado.
+          </p>
+          <div class="proyecto-odoo-badge reveal reveal-delay-4">
+            <span class="odoo-dot"></span>
+            <span>Powered by Odoo Community</span>
+          </div>
+        </div>
+
+        <div class="proyecto-features">
+          <div class="proyecto-feature reveal reveal-delay-1">
+            <div class="pf-icon">🔓</div>
+            <h4>Código Abierto</h4>
+            <p>Sin costos de licencia. Adaptable a las necesidades específicas de la finca.</p>
+          </div>
+          <div class="proyecto-feature reveal reveal-delay-2">
+            <div class="pf-icon">🔗</div>
+            <h4>Integración total</h4>
+            <p>Todos los módulos conectados en tiempo real, eliminando silos de información.</p>
+          </div>
+          <div class="proyecto-feature reveal reveal-delay-3">
+            <div class="pf-icon">📊</div>
+            <h4>Reportes en tiempo real</h4>
+            <p>Dashboards operativos y financieros actualizados al momento para mejor toma de decisiones.</p>
+          </div>
+          <div class="proyecto-feature reveal reveal-delay-4">
+            <div class="pf-icon">🌐</div>
+            <h4>Acceso remoto</h4>
+            <p>Consultar y registrar información desde cualquier lugar, incluso desde el campo.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         8. CONTACTO
+    ══════════════════════════════════════════ -->
+    <section id="contacto" class="contacto">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <p class="eyebrow">Conectemos</p>
+          <h2>Estamos para <em>escucharte</em></h2>
+          <p>¿Interesado en nuestro café o en el proyecto tecnológico? Escríbenos.</p>
+          <div class="divider-gold"></div>
+        </div>
+
+        <div class="contacto-grid">
+
+          <!-- Información de contacto -->
+          <div class="contacto-info">
+            <h3>Información de contacto</h3>
+
+            <div class="info-item reveal">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="info-text">
+                <strong>Ubicación</strong>
+                <span>El Salvador<br />
+                <!-- 📍 Actualiza con la ubicación exacta de la finca --></span>
+              </div>
+            </div>
+
+            <div class="info-item reveal reveal-delay-1">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div class="info-text">
+                <strong>Teléfono / WhatsApp</strong>
+                <span><!-- 📞 Actualiza con tu número de WhatsApp --><br />Disponible de lunes a sábado</span>
+              </div>
+            </div>
+
+            <div class="info-item reveal reveal-delay-2">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="info-text">
+                <strong>Correo electrónico</strong>
+                <span><!-- ✉️ Actualiza con tu correo --><br />Respuesta en 24–48 horas</span>
+              </div>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="reveal reveal-delay-3">
+              <div class="social-links">
+                <!-- Facebook -->
+                <a href="#" class="social-link" aria-label="Facebook" title="Síguenos en Facebook">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                </a>
+                <!-- Instagram -->
+                <a href="#" class="social-link" aria-label="Instagram" title="Síguenos en Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/50300000000" class="social-link" aria-label="WhatsApp" title="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- WhatsApp directo -->
+            <a href="https://wa.me/50300000000?text=Hola,%20me%20interesa%20saber%20más%20sobre%20Finca%20El%20Magueyal"
+               class="whatsapp-btn reveal reveal-delay-4"
+               target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Escribir por WhatsApp
+            </a>
+          </div>
+
+          <!-- Formulario -->
+          <div class="contacto-form reveal reveal-delay-2">
+            <form class="contact-form-el" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nombre">Nombre completo</label>
+                  <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="empresa">Empresa / Organización</label>
+                  <input type="text" id="empresa" name="empresa" placeholder="Opcional" autocomplete="organization" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="asunto">Motivo de contacto</label>
+                <select id="asunto" name="asunto" required>
+                  <option value="" disabled selected>Selecciona un tema</option>
+                  <option value="cafe">Compra de café</option>
+                  <option value="erp">Proyecto ERP / Odoo</option>
+                  <option value="visita">Visitar la finca</option>
+                  <option value="alianza">Alianza o colaboración</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Enviar mensaje
+              </button>
+
+              <p style="color:rgba(245,237,216,0.3); font-size:0.78rem; text-align:center; margin-top:14px;">
+                Este formulario es visual. Para activar el envío, conecta un servicio como <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" style="color:var(--dorado)">Formspree</a> o <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" style="color:var(--dorado)">Web3Forms</a>.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          <img src="assets/images/logo.jpeg" alt="Logo Finca El Magueyal" class="footer-brand-logo" width="64" height="64" loading="lazy" />
+          <p class="footer-brand-name">Finca El Magueyal</p>
+          <p>Tradición cafetalera, calidad y tecnología desde el campo hasta la comercialización. Café de especialidad de El Salvador.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#finca">La Finca</a></li>
+            <li><a href="#cafe">Nuestro Café</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#tecnologia">Tecnología</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tecnología</h4>
+          <ul>
+            <li><a href="#tecnologia">Sistema ERP</a></li>
+            <li><a href="#tecnologia">Módulo RRHH</a></li>
+            <li><a href="#tecnologia">Inventario</a></li>
+            <li><a href="#tecnologia">Ventas</a></li>
+            <li><a href="#tecnologia">Facturación</a></li>
+            <li><a href="https://odoo.com" target="_blank" rel="noopener noreferrer">Odoo Community</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Finca El Magueyal. Todos los derechos reservados.</p>
+        <p>Diseñado con ☕ en El Salvador · Potenciado por <a href="https://odoo.com" target="_blank" rel="noopener noreferrer">Odoo</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
